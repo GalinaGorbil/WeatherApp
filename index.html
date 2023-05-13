@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wether app</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="header">
+        <h1>Wether Forecast</h1>
+        </div>
+        <form class="search-form" id="search-form">
+            <div class="form-group">
+              <input
+              type="username"
+              class="form-control"
+              id="form-control"
+              placeholder="Enter the region"
+              value=""
+              autofocus
+            />
+            
+          </div>
+        </form>
+        <div>
+        <button id=showGeo>geolocotaion</button>
+        </div>
+
+        <div class="card" style="width: 12rem; height: 10rem">
+          <img
+            src="img/sun.png"
+            class="card-img-top"
+            alt="Sun"
+            style="width: 50px"
+          />
+          
+            
+          
+
+          <div class="card-body">
+           
+            <span class="temperature" id="temperature">3</span>
+            <span class="units">
+                <a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+
+            <h2 class="card-title" id="city">Paris</h2>
+                   
+             <p class="card-text">preassure, wind, humidity</p>
+            
+
+          </div>
+        </div>
+
+<div>
+    <div class="date" id="date">
+        <span>
+            <h3>Friday, 28 March</h3>
+            <h3></h3>
+        </span>
+        
+        
+    </div>
+    <div>
+       
+    </div>
+
+    <br/>
+    
+</div>
+
+
+<div class="card-group">
+    <div class="card">
+      <img src="img/cloud.png" class="card-img-top" alt="..." style="width: 50px" />
+      <div class="card-body">
+        <h5 class="card-title">Sunday</h5>
+        <p class="card-text">
+            <h5>temperature</h5>
+
+          <h6>  
+            pressure,
+            wind,
+            humidity
+          </h6>
+          </p>
+      </div>
+     
+    </div>
+    <div class="card">
+      <img src="img/sun.png" class="card-img-top" alt="..."style="width: 50px" />
+      <div class="card-body">
+        <h5 class="card-title">Monday </h5>
+        <p class="card-text">
+            <h5>temperature</h5>
+<h6>
+            pressure,
+            wind,
+            humidity
+</h6>
+          </p>
+      </div>
+      
+    </div>
+    <div class="card">
+      <img src="img/rain.png" class="card-img-top" alt="..." style="width: 50px" />
+      <div class="card-body">
+        <h5 class="card-title">Tuesday</h5>
+        <p class="card-text">
+            <h5>temperature</h5>
+<h6>
+            pressure,
+            wind,
+            humidity
+          </h6>
+          </p>
+      </div>
+      
+      
+    </div>
+    <div class="card">
+        <img src="img/sun.png" class="card-img-top" alt="..." style="width: 50px" />
+        <div class="card-body">
+          <h5 class="card-title">Wednsday</h5>
+          <p class="card-text">
+            <h5>temperature</h5>
+<h6>
+            pressure,
+            wind,
+            humidity
+          </h6>
+          </p>
+        </div>
+        
+       
+      </div>
+      <div class="card">
+        <img src="img/partlysun.png" class="card-img-top" alt="..." style="width: 50px" />
+        <div class="card-body">
+          <h5 class="card-title">Thursday</h5>
+          <p class="card-text">
+            <h5>temperature</h5>
+<h6>
+            pressure,
+            wind,
+            humidity
+          </h6>
+          </p>
+        </div>
+        
+        
+
+  </div>
+</div>
+
+       
+      </div>
+    
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
