@@ -88,3 +88,10 @@ h6 {
 .card {
   background-color: #fafffe;
 }
+
+.GitHub{
+  position: relative;
+  left: 700px;
+  top: 50px;
+  color: aliceblue;
+}
