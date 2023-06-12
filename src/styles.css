@@ -81,6 +81,12 @@ img {
   text-decoration: none;
 }
 
+#description {
+  font-size: 12px; 
+  position: relative;
+  bottom: 15px;
+  left: 120px;
+}
 .card-text {
   font-size: 12px;
   position: relative;
