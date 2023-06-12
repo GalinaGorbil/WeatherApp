@@ -38,11 +38,12 @@
         <button id=showGeo>geolocotaion</button>
         </div>
 
-        <div class="card" style="width: 12rem; height: 10rem">
+        <div class="card" style="width: 15rem; height: 10rem">
           <img
-            src="img/sun.png"
+          id="icon"
+            src=""
             class="card-img-top"
-            alt="Sun"
+            alt=""
             style="width: 50px"
           />
           
@@ -53,16 +54,24 @@
            
             <span class="temperature" id="temperature">3</span>
             <span class="units">
-                <a href="#" id="celsius-link">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
+                <a href="#" class="active" id="celsius-link">°C</a> |
+                <a href="#" class="active" id="fahrenheit-link">°F</a>
               </span>
 
             <h2 class="card-title" id="city">Paris</h2>
                    
-             <p class="card-text">preassure, wind, humidity</p>
-            
+          
 
           </div>
+
+          <div class="col-12">
+            <ul>
+              <li class="card-text">Humidity: <span id="humidity"></span>%</li>
+              <li class="card-text">Wind: <span id="wind"></span> km/h</li>
+              <li class="card-text">Pressure: <span id="pressure"></span> PA</li>
+            </ul>
+          </div>
+
         </div>
 
 <div>
