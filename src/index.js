@@ -49,7 +49,7 @@ function showGeoCity(event) {
 }
 //Log h2 з card-title
 function loadedCity(city) {
-  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+  let apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCityTemperature);
 }
