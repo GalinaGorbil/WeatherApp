@@ -14,7 +14,7 @@ function showCity(event) {
   loadedCity.innerHTML = formaControl.value;
   //temperature changing
   function showTemperature(response) {
-    let celsiusTemperature = response.data.main.temp;
+    celsiusTemperature = response.data.main.temp;
     formaControl.value = response.data.name;
     let changeTemp = document.querySelector("#temperature");
     changeTemp.innerHTML = Math.round(celsiusTemperature);
@@ -61,7 +61,7 @@ function loadedCity(city) {
   loadedCity.innerHTML = navigator.geolocation.value;*/
 
 function showCityTemperature(response) {
-  let celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
   let changeGeotemperature = document.querySelector("#temperature");
   changeGeotemperature.innerHTML = Math.round(celsiusTemperature);
   let town = document.querySelector("#city");
