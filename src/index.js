@@ -177,6 +177,44 @@ let formattedDate = document.querySelector("#date");
 formattedDate.innerHTML = formatDate(now);
 
 
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+let days = ["Thu", "Fri", "Sat", "Sun", "Mon","Tues"];
+
+let forecastHTML = `<div class="row">`;
+days.forEach(function (day) {
+forecastHTML = forecastHTML +
+`
+  <div class="col-2">
+      <img src="img/cloud.png" class="card-img-top" alt="..." style="width: 50px" />
+      <div class="card-body">
+      ${day}
+        </div>
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+<div>
+         <ul>
+              <li class="card-text_forecast">Humidity: <span id="humidity_forecast"></span>%</li>
+              <li class="ccard-text_forecast">Wind: <span id="wind_forecast"></span> km/h</li>
+              <li class="card-text_forecast">
+                Pressure: <span id="pressure_forecast"></span> PA
+              </li>
+            </ul>
+</div>
+        </div>
+      </div>
+     
+     `;
+    });
+
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+}
+
+displayForecast();
 
 
 

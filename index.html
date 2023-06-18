@@ -19,11 +19,11 @@
     <div id="app">
       <div class="container">
         <div class="header">
-        <h1>Wether Forecast</h1>
+          <h1>Wether Forecast</h1>
         </div>
         <form class="search-form" id="search-form">
-            <div class="form-group">
-              <input
+          <div class="form-group">
+            <input
               type="username"
               class="form-control"
               id="form-control"
@@ -31,163 +31,67 @@
               value=""
               autofocus
             />
-            
           </div>
         </form>
         <div>
-        <button id=showGeo>geolocotaion</button>
+          <button id="showGeo">geolocotaion</button>
         </div>
 
         <div class="card" style="width: 15rem; height: 10rem">
           <img
-          id="icon"
+            id="icon"
             src=""
             class="card-img-top"
             alt=""
             style="width: 50px"
           />
-          
+
           <div class="overview">
             <ul>
-             
-             <li id="description"></li>
-           </ul>
-         </div>
-          
+              <li id="description"></li>
+            </ul>
+          </div>
+
           <div class="card-body">
-           
             <span class="temperature" id="temperature">3</span>
             <span class="units">
-                <a href="#" class="active" id="celsius-link">°C</a> |
-                <a href="#" class="active" id="fahrenheit-link">°F</a>
-              </span>
+              <a href="#" class="active" id="celsius-link">°C</a> |
+              <a href="#" class="active" id="fahrenheit-link">°F</a>
+            </span>
 
             <h2 class="card-title" id="city">Paris</h2>
-                   
-          
-
           </div>
 
           <div class="col-12">
             <ul>
               <li class="card-text">Humidity: <span id="humidity"></span>%</li>
               <li class="card-text">Wind: <span id="wind"></span> km/h</li>
-              <li class="card-text">Pressure: <span id="pressure"></span> PA</li>
+              <li class="card-text">
+                Pressure: <span id="pressure"></span> PA
+              </li>
             </ul>
           </div>
-
         </div>
 
-<div>
-    <div class="date" id="date">
-        <span>
-            <h3>Friday, 28 March</h3>
-            <h3></h3>
-        </span>
-        
-        
-    </div>
-    <div>
-       
-    </div>
+        <div>
+          <div class="date" id="date">
+            <span>
+              <h3>Friday, 28 March</h3>
+              <h3></h3>
+            </span>
+          </div>
+          <div></div>
 
-    <br/>
-    
-</div>
-
-
-<div class="card-group">
-    <div class="card">
-      <img src="img/cloud.png" class="card-img-top" alt="..." style="width: 50px" />
-      <div class="card-body">
-        <h5 class="card-title">Sunday</h5>
-        
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-
-          <h6>  
-            pressure,
-            wind,
-            humidity
-          </h6>
-        
-      </div>
-     
-    </div>
-    <div class="card">
-      <img src="img/sun.png" class="card-img-top" alt="..."style="width: 50px" />
-      <div class="card-body">
-        <h5 class="card-title">Monday </h5>
-        <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-            
-<h6>
-            pressure,
-            wind,
-            humidity
-</h6>
-          </p>
-      </div>
-      
-    </div>
-    <div class="card">
-      <img src="img/rain.png" class="card-img-top" alt="..." style="width: 50px" />
-      <div class="card-body">
-        <h5 class="card-title">Tuesday</h5>
-        <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-            
-<h6>
-            pressure,
-            wind,
-            humidity
-          </h6>
-          </p>
-      </div>
-      
-      
-    </div>
-    <div class="card">
-        <img src="img/sun.png" class="card-img-top" alt="..." style="width: 50px" />
-        <div class="card-body">
-          <h5 class="card-title">Wednsday</h5>
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-<h6>
-            pressure,
-            wind,
-            humidity
-          </h6>
-          </p>
+          <br />
         </div>
-        
-       
-      </div>
-      <div class="card">
-        <img src="img/partlysun.png" class="card-img-top" alt="..." style="width: 50px" />
-        <div class="card-body">
-          <h5 class="card-title">Thursday</h5>
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-<h6>
-            pressure,
-            wind,
-            humidity
-          </h6>
-          </p>
-        </div>
-        
-        
 
-  </div>
-</div>
-
-       
+        <div class="card-group" id="forecast"></div>
       </div>
-    
+    </div>
 
     <script src="src/index.js"></script>
-    <a href="https://github.com/GalinaGorbil/WeatherApp" class="GitHub">WeatherApp_gitHub_GalinaGorbil</a>
+    <a href="https://github.com/GalinaGorbil/WeatherApp" class="GitHub"
+      >WeatherApp_gitHub_GalinaGorbil</a
+    >
   </body>
 </html>
-
