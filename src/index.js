@@ -13,6 +13,47 @@ function showCity(event) {
   let formaControl = document.querySelector("#form-control");
   loadedCity.innerHTML = formaControl.value;
   //temperature changing
+
+  function displayForecast(response) {
+    console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon","Tues"];
+  
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+  forecastHTML = forecastHTML +
+  `
+    <div class="col-2">
+        <img src="img/cloud.png" class="card-img-top" alt="..." style="width: 50px" />
+        <div class="card-body">
+        ${day}
+          </div>
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max"> 18° </span>
+            <span class="weather-forecast-temperature-min"> 12° </span>
+  
+          </div>
+        </div>
+       
+       `;
+      });
+  
+  
+      forecastHTML = forecastHTML + `</div>`;
+      forecastElement.innerHTML = forecastHTML;
+      console.log(forecastHTML);
+  }
+  
+
+function getDaylyForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
+
   function showTemperature(response) {
     celsiusTemperature = response.data.main.temp;
     formaControl.value = response.data.name;
@@ -32,8 +73,11 @@ function showCity(event) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   pressureElement.innerHTML = Math.round(response.data.main.pressure);
-  }
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  
+  getDaylyForecast(response.data.coord);
+}
+
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${formaControl.value}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
@@ -49,8 +93,8 @@ function showGeoCity(event) {
 }
 //Log h2 з card-title
 function loadedCity(city) {
-  let apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCityTemperature);
 }
 
@@ -59,6 +103,50 @@ function loadedCity(city) {
   // Add class special to the h2 with class card-title
   loadedCity.classList.add("special");
   loadedCity.innerHTML = navigator.geolocation.value;*/
+
+  function displayForecast(response) {
+    console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon","Tues"];
+  
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+  forecastHTML = forecastHTML +
+  `
+    <div class="col-2">
+        <img src="img/cloud.png" class="card-img-top" alt="..." style="width: 50px" />
+        <div class="card-body">
+        ${day}
+          </div>
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max"> 18° </span>
+            <span class="weather-forecast-temperature-min"> 12° </span>
+  
+          </div>
+        </div>
+       
+       `;
+      });
+  
+  
+      forecastHTML = forecastHTML + `</div>`;
+      forecastElement.innerHTML = forecastHTML;
+      console.log(forecastHTML);
+  }
+  
+
+function getDaylyForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
+  /*let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);*/
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
+
 
 function showCityTemperature(response) {
   celsiusTemperature = response.data.main.temp;
@@ -80,15 +168,17 @@ function showCityTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   pressureElement.innerHTML = Math.round(response.data.main.pressure);
-  /*getForecast(response.data.coord);*/
+  
+  /*Не понятно, почему не обнаруживает)*/
+ getDaylyForecast(response.data.coord);
 
-  /* let place = response.data.name;*/
 }
+
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(showCityTemperature);
@@ -177,44 +267,8 @@ let formattedDate = document.querySelector("#date");
 formattedDate.innerHTML = formatDate(now);
 
 
-function displayForecast() {
-let forecastElement = document.querySelector("#forecast");
-let days = ["Thu", "Fri", "Sat", "Sun", "Mon","Tues"];
 
-let forecastHTML = `<div class="row">`;
-days.forEach(function (day) {
-forecastHTML = forecastHTML +
-`
-  <div class="col-2">
-      <img src="img/cloud.png" class="card-img-top" alt="..." style="width: 50px" />
-      <div class="card-body">
-      ${day}
-        </div>
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-<div>
-         <ul>
-              <li class="card-text_forecast">Humidity: <span id="humidity_forecast"></span>%</li>
-              <li class="ccard-text_forecast">Wind: <span id="wind_forecast"></span> km/h</li>
-              <li class="card-text_forecast">
-                Pressure: <span id="pressure_forecast"></span> PA
-              </li>
-            </ul>
-</div>
-        </div>
-      </div>
-     
-     `;
-    });
-
-
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
-    console.log(forecastHTML);
-}
-
-displayForecast();
+/*displayForecast();*/
 
 
 
