@@ -181,7 +181,7 @@ function showCityTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   pressureElement.innerHTML = Math.round(response.data.main.pressure);
 
-  /*Не понятно, почему не обнаруживает)*/
+  
   getDaylyForecast(response.data.coord);
 }
 
@@ -198,6 +198,7 @@ function showPosition(position) {
 let geoButton = document.querySelector("#showGeo");
 geoButton.addEventListener("click", showGeoCity);
 
+/*
 //C/F
 
 function convertToFahrenheit(event) {
@@ -219,11 +220,12 @@ function convertToCelsius(event) {
 /*let celsiusTemperature = response.data.main.temp;*/
 let celsiusTemperature = null;
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
+/*let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
+celsiusLink.addEventListener("click", convertToCelsius);*/
+
 loadedCity("Paris");
 
 //Date
@@ -277,4 +279,4 @@ function formatDate(date) {
 let formattedDate = document.querySelector("#date");
 formattedDate.innerHTML = formatDate(now);
 
-/*displayForecast();*/
+
